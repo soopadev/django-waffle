@@ -10,7 +10,7 @@ class Migration(migrations.Migration):
 
     dependencies = [
         ('auth', '0001_initial'),
-        migrations.swappable_dependency(settings.AUTH_USER_MODEL),
+        migrations.swappable_dependency(settings.WAFFLE_AUTH_USER_MODEL),
     ]
 
     operations = [
@@ -31,7 +31,7 @@ class Migration(migrations.Migration):
                 ('created', models.DateTimeField(default=django.utils.timezone.now, help_text='Date when this Flag was created.', db_index=True)),
                 ('modified', models.DateTimeField(default=django.utils.timezone.now, help_text='Date when this Flag was last modified.')),
                 ('groups', models.ManyToManyField(help_text='Activate this flag for these user groups.', to='auth.Group', blank=True)),
-                ('users', models.ManyToManyField(help_text='Activate this flag for these users.', to=settings.AUTH_USER_MODEL, blank=True)),
+                ('users', models.ManyToManyField(help_text='Activate this flag for these users.', to=settings.WAFFLE_AUTH_USER_MODEL, blank=True)),
             ],
             options={
             },

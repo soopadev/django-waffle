@@ -176,7 +176,7 @@ class Flag(BaseModel):
         verbose_name=_('Groups'),
     )
     users = models.ManyToManyField(
-        settings.AUTH_USER_MODEL,
+        settings.WAFFLE_AUTH_USER_MODEL,
         blank=True,
         help_text=_('Activate this flag for these users.'),
         verbose_name=_('Users'),
